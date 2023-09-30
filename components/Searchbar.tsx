@@ -30,6 +30,22 @@ const Searchbar = ({}) => {
     e.preventDefault();
 
     const isValidLink = isValidAmazonProductURL(searchPrompt);
+
+    if(!isValidLink) {
+      alert('Please enter a valid Amazon product link');
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+
+      // Scrape
+      // const product = await scrapeAndStoreProduct(searchPrompt);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
