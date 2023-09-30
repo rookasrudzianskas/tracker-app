@@ -1,5 +1,5 @@
-// import HeroCarousel from "@/components/HeroCarousel"
-// import Searchbar from "@/components/Searchbar"
+import HeroCarousel from "@/components/HeroCarousel"
+import Searchbar from "@/components/Searchbar"
 import { getAllProducts } from "@/lib/actions"
 import Image from "next/image";
 // import ProductCard from "@/components/ProductCard"
@@ -31,10 +31,10 @@ const Home = async () => {
               Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.
             </p>
 
-      {/*      <Searchbar />*/}
+            <Searchbar />
           </div>
 
-          {/*<HeroCarousel />*/}
+          <HeroCarousel />
         </div>
       </section>
 
