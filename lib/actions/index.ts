@@ -11,10 +11,19 @@ import { generateEmailBody, sendEmail } from "../nodemailer";
 export async function scrapeAndStoreProduct(productUrl: string) {
   if(!productUrl) return;
 
-  const scrapedProduct = await scrapeAmazonProduct(productUrl);
 
   try {
     connectToDB();
+
+    const scrapedProduct = await scrapeAmazonProduct(productUrl);
+
+    if(!scrapedProduct) return;
+
+    let product = scrapedProduct;
+
+    const existingProduct = await Product.findOne({ url: scrapedProduct.url });
+
+
   } catch (error) {
 
   }
