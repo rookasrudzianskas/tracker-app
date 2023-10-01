@@ -11,7 +11,6 @@ import { generateEmailBody, sendEmail } from "../nodemailer";
 export async function scrapeAndStoreProduct(productUrl: string) {
   if(!productUrl) return;
 
-
   try {
     connectToDB();
 
@@ -42,7 +41,7 @@ export async function scrapeAndStoreProduct(productUrl: string) {
       { url: scrapedProduct.url },
       product,
       { upsert: true, new: true }
-    )
+    );
 
     revalidatePath(`/products/${newProduct._id}`);
   } catch (error: any) {
