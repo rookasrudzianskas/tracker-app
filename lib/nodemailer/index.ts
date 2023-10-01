@@ -29,7 +29,7 @@ export async function generateEmailBody(
       subject = `Welcome to Price Tracking for ${shortenedTitle}`;
       body = `
         <div>
-          <h2>Welcome to PriceWise 🚀</h2>
+          <h2>Welcome to Track App 🚀</h2>
           <p>You are now tracking ${product.title}.</p>
           <p>Here's an example of how you'll receive updates:</p>
           <div style="border: 1px solid #ccc; padding: 10px; background-color: #f8f8f8;">
@@ -101,7 +101,7 @@ export const sendEmail = async (emailContent: EmailContent, sendTo: string[]) =>
 
   transporter.sendMail(mailOptions, (error: any, info: any) => {
     if(error) return console.log(error);
-    
+
     console.log('Email sent: ', info);
   })
 }
