@@ -11,6 +11,8 @@ import { generateEmailBody, sendEmail } from "../nodemailer";
 export async function scrapeAndStoreProduct(productUrl: string) {
   if(!productUrl) return;
 
+  const scrapedProduct = await scrapeAmazonProduct(productUrl);
+
   try {
     connectToDB();
   } catch (error) {
